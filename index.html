@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SET Geomatics Consult Ltd – Every Point Counts</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <!-- ============================
+       TOAST NOTIFICATION
+  ============================= -->
+  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+  <!-- ============================
+       NAVBAR
+  ============================= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Circular CSS logo -->
+      <a href="#home" class="nav-logo" aria-label="SET Geomatics home">
+      <div class="logo-circle">
+  <img src="logo.jpg" alt="SET Geomatics Logo">
+</div>
+
+        <div class="logo-name">
+          <span class="logo-primary">SET Geomatics</span>
+          <span class="logo-sub">Consult Ltd</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks" role="navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#request">Request</a>
+        <a href="#portalModal" id="portalNavBtn">Client Portal</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================
+       HERO SECTION
+  ============================= -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-shape shape-1"></div>
+      <div class="hero-shape shape-2"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag animate-up">Precision · Integrity · Excellence</p>
+      <h1 class="hero-headline animate-up delay-1">
+        Every Point Counts,<br/>Every Measurement<br/>
+        <span class="hero-accent">Matters.</span>
+      </h1>
+      <p class="hero-sub animate-up delay-2">
+        Nigeria's trusted partner in land survey, topography,<br class="br-desktop"/>
+        and geomatics consulting since incorporation.
+      </p>
+      <div class="hero-cta animate-up delay-3">
+        <a href="#request" class="btn btn-primary">Request Service</a>
+        <a href="#services" class="btn btn-ghost">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================
+       ABOUT SECTION
+  ============================= -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-card-stack">
+            <div class="stat-card">
+              <span class="stat-num">RC</span>
+              <span class="stat-label">8129539</span>
+              <span class="stat-desc">Registered Company</span>
+            </div>
+            <div class="stat-card stat-card-2">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Accuracy</span>
+              <span class="stat-desc">Survey Precision</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-tag">Who We Are</p>
+          <h2 class="section-title">SET Geomatics<br/>Consult Ltd</h2>
+          <p class="about-body">
+            SET Geomatics Consult Ltd (RC: <strong>8129539</strong>) is a duly registered geomatics and land survey consultancy firm based in Asaba, Delta State, Nigeria. Under the visionary leadership of our CEO, <strong>Surv. Todonukun John S.</strong>, we deliver accurate, legally compliant, and technologically advanced survey solutions.
+          </p>
+          <p class="about-body">
+            From boundary demarcation to engineering surveys, our team combines field expertise with modern geospatial tools to serve individuals, developers, corporations, and government bodies alike.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight"><span class="hl-icon">✦</span> Licensed Surveyors</div>
+            <div class="highlight"><span class="hl-icon">✦</span> SURCON Compliant</div>
+            <div class="highlight"><span class="hl-icon">✦</span> Modern Equipment</div>
+            <div class="highlight"><span class="hl-icon">✦</span> Digital Delivery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SERVICES SECTION
+  ============================= -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">What We Do</p>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-desc">Comprehensive geomatics solutions tailored to your needs.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <rect x="6" y="36" width="36" height="4" rx="2" fill="currentColor" opacity="0.3"/>
+              <path d="M24 8L8 32h32L24 8z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+              <circle cx="24" cy="26" r="3" fill="currentColor"/>
+              <line x1="24" y1="8" x2="24" y2="5" stroke="currentColor" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3>Land Survey</h3>
+          <p>Precise boundary demarcation, title plans, and land registration surveys in full compliance with Nigerian law.</p>
+          <a href="#request" class="service-link">Request →</a>
+        </article>
+
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M6 38 L12 22 L20 28 L28 16 L36 24 L42 12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <circle cx="12" cy="22" r="2.5" fill="currentColor"/>
+              <circle cx="20" cy="28" r="2.5" fill="currentColor"/>
+              <circle cx="28" cy="16" r="2.5" fill="currentColor"/>
+              <circle cx="36" cy="24" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Topography</h3>
+          <p>Detailed terrain mapping, elevation data, and contour surveys for construction, drainage, and planning projects.</p>
+          <a href="#request" class="service-link">Request →</a>
+        </article>
+
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <rect x="10" y="28" width="8" height="14" rx="1" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="20" y="20" width="8" height="22" rx="1" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="30" y="12" width="8" height="30" rx="1" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="6" y1="42" x2="42" y2="42" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3>Engineering Survey</h3>
+          <p>Route surveys, construction stakeout, as-built surveys, and infrastructure monitoring for civil engineering projects.</p>
+          <a href="#request" class="service-link">Request →</a>
+        </article>
+
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <rect x="8" y="16" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M16 16V12a8 8 0 0116 0v4" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="24" cy="28" r="4" fill="currentColor" opacity="0.4"/>
+            </svg>
+          </div>
+          <h3>Real Estate Survey</h3>
+          <p>Property surveys, valuation support, and documentation for real estate transactions, mortgages, and development.</p>
+          <a href="#request" class="service-link">Request →</a>
+        </article>
+
+        <article class="service-card service-card-wide" tabindex="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M16 24h16M24 16v16" stroke="currentColor" stroke-width="2.5" opacity="0.5"/>
+              <circle cx="24" cy="24" r="5" fill="currentColor" opacity="0.4"/>
+            </svg>
+          </div>
+          <h3>Dispute Consultancy</h3>
+          <p>Expert witness services, boundary dispute resolution, and technical advisory for legal proceedings involving land and property matters.</p>
+          <a href="#request" class="service-link">Request →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SERVICE REQUEST FORM
+  ============================= -->
+  <section class="request-section section" id="request">
+    <div class="container">
+      <div class="request-wrap">
+        <div class="request-info">
+          <p class="section-tag light">Get In Touch</p>
+          <h2 class="section-title light">Request a Service</h2>
+          <p class="request-body">
+            Fill the form and our team will reach out within 24 hours to discuss your project requirements.
+          </p>
+          <address class="contact-address">
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span>Asaba, Delta State, Nigeria</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">🏢</span>
+              <span>RC: 8129539</span>
+            </div>
+          </address>
+        </div>
+
+        <form class="request-form" id="requestForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name <span class="required">*</span></label>
+              <input type="text" id="fullName" name="fullName" placeholder=" your name.." required autocomplete="name" />
+              <span class="field-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. 080...." required autocomplete="tel" />
+              <span class="field-error" id="phoneError"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="serviceType">Service Type <span class="required">*</span></label>
+            <div class="select-wrap">
+              <select id="serviceType" name="serviceType" required>
+                <option value="" disabled selected>Select a service…</option>
+                <option value="Land Survey">Land Survey</option>
+                <option value="Topography">Topography</option>
+                <option value="Engineering Survey">Engineering Survey</option>
+                <option value="Real Estate Survey">Real Estate Survey</option>
+                <option value="Dispute Consultancy">Dispute Consultancy</option>
+              </select>
+            </div>
+            <span class="field-error" id="serviceError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location <span class="required">*</span></label>
+            <input type="text" id="location" name="location" placeholder="Town / LGA / State" required />
+            <span class="field-error" id="locationError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Additional Message <span class="optional">(optional)</span></label>
+            <textarea id="message" name="message" placeholder="Describe your project or any special requirements…" rows="4"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            <span id="submitBtnText">Submit Request</span>
+            <span class="spinner" id="submitSpinner" aria-hidden="true"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER
+  ============================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+      <div class="logo-circle logo-circle-sm">
+  <img src="logo.jpg" alt="SET Geomatics Logo">
+</div>
+
+        <div>
+          <p class="footer-company">SET Geomatics Consult Ltd</p>
+          <p class="footer-rc">RC: 8129539</p>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <p>📍 Asaba, Delta State, Nigeria</p>
+        <p>CEO: Surv. Todonukun John S.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#request">Contact</a>
+        <button class="footer-portal-btn" id="footerPortalBtn">Client Portal</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> SET Geomatics Consult Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============================
+       CLIENT PORTAL MODAL
+  ============================= -->
+  <div class="modal-overlay" id="portalModal" role="dialog" aria-modal="true" aria-labelledby="portalTitle">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close portal">✕</button>
+      <div class="modal-header">
+        <div class="modal-icon">📂</div>
+        <h2 id="portalTitle">Client Portal</h2>
+        <p>View your survey document securely.</p>
+      </div>
+
+      <form class="portal-form" id="portalForm" novalidate>
+        <div class="form-group">
+          <label for="planNumber">Survey Plan Number <span class="required">*</span></label>
+          <input type="text" id="planNumber" placeholder="e.g. DT/...." required />
+          <span class="field-error" id="planError"></span>
+        </div>
+        <div class="form-group">
+          <label for="planYear">Year <span class="required">*</span></label>
+          <input type="number" id="planYear" placeholder="e.g. 2022" min="1990" max="2099" required />
+          <span class="field-error" id="yearError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="portalBtn">
+          <span id="portalBtnText">View Document</span>
+          <span class="spinner" id="portalSpinner" aria-hidden="true"></span>
+        </button>
+      </form>
+
+   <div class="portal-result" id="portalResult">
+  </div>
+
+<div id="docViewTemplate" style="display: none;">
+  <div class="document-view-box" style="text-align: left; padding: 15px; background: #fff; border: 1px solid #ddd; border-radius: 8px; margin-top: 20px;">
+      <p><strong>Owner:</strong> <span id="viewOwner"></span></p>
+      <p><strong>Plan No:</strong> <span id="viewPlan"></span></p>
+      
+      <div style="position:relative; border: 1px solid #eee; height: 350px; background: #f4f4f4;">
+          <iframe id="viewFrame" src="" width="100%" height="100%" style="border:none;"></iframe>
+          <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0); z-index: 5;"></div>
+      </div>
+
+      <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 10px;">
+          <button class="btn btn-primary" id="reprintBtn">Request Physical Reprint</button>
+          <a id="fullscreenLink" href="#" target="_blank" class="btn btn-ghost" style="text-align: center; text-decoration: none;">View Fullscreen</a>
+      </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
